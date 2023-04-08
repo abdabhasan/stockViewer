@@ -1,0 +1,13 @@
+@import "../../Variables/stylingVars.scss";
+.logo-container {
+  background-color: $bg-logo;
+  color: $logo-color;
+  font-family: $logo-font;
+  h1 {
+    letter-spacing: 5px;
+    line-height: 30px;
+    h2 {
+      letter-spacing: 1px;
+    }
+  }
+}
