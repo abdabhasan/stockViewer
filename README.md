@@ -6,13 +6,13 @@ This is a simple React application that allows users to search for stock market 
 
 1. Clone the repository.
 
-2. Run npm install to install the necessary dependencies.
+2. Run `npm install` to install the necessary dependencies.
 
-3. Run npm start to start the development server.
+3. Run `npm start` to start the development server.
 
 ### Usage
 
-1.  Open your browser and navigate to http://localhost:3000.
+1.  Open your browser and navigate to http://localhost:3000 or check https://abdabhasan.github.io/stockViewer.
 
 2.  Use the search bar to search for a stock by name or symbol.
 
