@@ -1,0 +1,13 @@
+@import "../../Variables/stylingVars.scss";
+
+.form-control {
+  background-color: $bg-search !important;
+}
+
+.dropdown-menu {
+  height: 300px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  cursor: pointer;
+  width: 100%;
+}

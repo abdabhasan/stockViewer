@@ -1,0 +1,8 @@
+@import "../../Variables/stylingVars.scss";
+.data-container {
+  background-color: $primary-color;
+  color: $secondary-color;
+  span {
+    color: $grey-color;
+  }
+}

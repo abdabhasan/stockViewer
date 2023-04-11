@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import finnHub from "../APIs/finnHub";
-import { StockChart, StockData } from "../Components/index";
-
+import finnHub from "../../APIs/finnHub";
+import { StockChart, StockData, Logo } from "../../Components/index";
+import "./StockDetailsPage.scss";
 const formatData = (data) => {
   return data.t.map((el, index) => {
     return {
@@ -72,14 +72,23 @@ const StockDetailsPage = () => {
   }, [symbol]);
 
   return (
-    <div>
+    <main className="stock-details-page">
       {chartData && (
-        <div>
-          <StockChart chartData={chartData} symbol={symbol} />
-          <StockData symbol={symbol} />
+        <div className="row">
+          <div className="col-md-8 mt-3 position-relative">
+            <StockChart chartData={chartData} symbol={symbol} />
+          </div>
+          <div className="col-md-4   logo-container">
+            <div className="row" style={{ height: "33.33%" }}>
+              <Logo />
+            </div>
+            <div className="row">
+              <StockData symbol={symbol} />
+            </div>
+          </div>
         </div>
-      )}{" "}
-    </div>
+      )}
+    </main>
   );
 };
 

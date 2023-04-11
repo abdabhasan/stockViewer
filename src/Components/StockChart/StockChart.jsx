@@ -1,10 +1,11 @@
 import Chart from "react-apexcharts";
 import { useState } from "react";
+import { ChartButtons } from "../index";
 import "./StockChart.scss";
 
 const StockChart = ({ chartData, symbol }) => {
   const { day, week, year } = chartData;
-  const [dateFormat, setDateFormat] = useState("24h");
+  const [dateFormat, setDateFormat] = useState("7d");
 
   const determineTimeFormat = () => {
     switch (dateFormat) {
@@ -23,7 +24,7 @@ const StockChart = ({ chartData, symbol }) => {
     determineTimeFormat()[determineTimeFormat().length - 1].y -
       determineTimeFormat()[0].y >
     0
-      ? "#26C261"
+      ? "#03d069"
       : "#ed3419";
 
   const options = {
@@ -54,14 +55,6 @@ const StockChart = ({ chartData, symbol }) => {
     },
   };
 
-  const renderButtonSelect = (button) => {
-    const classes = "btn m-1 ";
-    if (button === dateFormat) {
-      return classes + "btn-primary";
-    } else {
-      return classes + "btn-outline-primary";
-    }
-  };
   const series = [
     {
       name: symbol,
@@ -70,27 +63,12 @@ const StockChart = ({ chartData, symbol }) => {
   ];
 
   return (
-    <div className="mt-5 p-4 shadow-sm bg-white">
-      <Chart options={options} series={series} type="area" width={"60%"} />
-      <button
-        className={renderButtonSelect("24h")}
-        onClick={() => setDateFormat("24h")}
-      >
-        24h
-      </button>
-      <button
-        className={renderButtonSelect("7d")}
-        onClick={() => setDateFormat("7d")}
-      >
-        7d
-      </button>
-      <button
-        className={renderButtonSelect("1y")}
-        onClick={() => setDateFormat("1y")}
-      >
-        1y
-      </button>
-    </div>
+    <>
+      <Chart options={options} series={series} type="area" width={"90%"} />
+      <div className="chart-buttons">
+        <ChartButtons dateFormat={dateFormat} setDateFormat={setDateFormat} />
+      </div>
+    </>
   );
 };
 

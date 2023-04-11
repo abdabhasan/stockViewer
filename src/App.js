@@ -14,4 +14,6 @@ function App() {
   );
 }
 
+//! make the details page responsive and write README file and commit changes
+
 export default App;

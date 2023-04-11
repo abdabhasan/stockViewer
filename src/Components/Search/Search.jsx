@@ -10,15 +10,7 @@ const Search = () => {
   const renderDropdown = () => {
     const dropDownClass = search ? "show" : null;
     return (
-      <ul
-        style={{
-          height: "300px",
-          overflowY: "scroll",
-          overflowX: "hidden",
-          cursor: "pointer",
-        }}
-        className={`dropdown-menu ${dropDownClass}`}
-      >
+      <ul className={`dropdown-menu   ${dropDownClass}`}>
         {results.map((result) => {
           return (
             <li
@@ -61,8 +53,8 @@ const Search = () => {
     return () => (isMounted = false);
   }, [search]);
   return (
-    <div className="w-50 p-3 mt-5 rounded mx-auto">
-      <div className="form-floating dropdown">
+    <div className="search-container w-50 p-3 mt-5 mb-5 rounded mx-auto">
+      <div className="form-floating dropdown rounded ">
         <input
           id="search"
           type="text"
@@ -71,9 +63,8 @@ const Search = () => {
           autoComplete="off"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          style={{ backgroundColor: "rgba(145,158,171,0.04" }}
         />
-        <label htmlFor="search">Search</label>
+        <label htmlFor="search">Search a stock</label>
 
         {renderDropdown()}
       </div>

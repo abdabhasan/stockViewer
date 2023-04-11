@@ -3,6 +3,10 @@
   background-color: $bg-logo;
   color: $logo-color;
   font-family: $logo-font;
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
   h1 {
     letter-spacing: 5px;
     line-height: 30px;

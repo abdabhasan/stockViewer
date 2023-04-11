@@ -1,13 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 
-// colors
+//main colors
 $primary-color: #03d069;
-$secondary-color: #000;
+$secondary-color: #e1e1e1;
+$dark-color: #000;
+$grey-color: #707070;
 
 // background colors
-$bg-logo: #e1e1e1;
-$logo-color: $primary-color;
+$bg-logo: $secondary-color;
 $bg-stockList: $primary-color;
-
+$bg-form: $secondary-color;
+$bg-search: $secondary-color;
+$bg-stockDetails: $secondary-color;
+$bg-logoDetails: $primary-color;
 // fonts
 $logo-font: "Anton", sans-serif;
+
+// fonts color
+$logo-color: $primary-color;
+$logoDetails-color: $secondary-color;
+$tableHeaders-color: $grey-color;

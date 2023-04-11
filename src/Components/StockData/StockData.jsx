@@ -20,52 +20,53 @@ const StockData = ({ symbol }) => {
         console.log(error);
       }
     };
+
     fetchData();
-    return () => (isMounted = false);
+
+    //! this is a bug if i use this code stockData doesn't show idk why
+    //!return () => (isMounted = false);
   }, [symbol]);
 
   return (
     <div>
       {stockData && (
-        <div className="row border bg-white rounded shadow-sm p-4 mt-5">
+        <div className="row data-container d-flex flex-column fs-5 p-4 mt-5">
           <div className="col">
             <div>
-              <span className="fw-bold">name: {stockData.name}</span>
+              <span>name: </span>
+              {stockData.name}
             </div>
             <div>
-              <span className="fw-bold">country: {stockData.country}</span>
+              <span>country: </span>
+              {stockData.country}
             </div>
             <div>
-              <span className="fw-bold">ticker: {stockData.ticker}</span>
+              <span>ticker: </span>
+              {stockData.ticker}
             </div>
           </div>
           <div className="col">
             <div>
-              <span className="fw-bold">Exchange: {stockData.exchange}</span>
+              <span>Exchange: </span>
+              {stockData.exchange}
             </div>
             <div>
-              <span className="fw-bold">
-                Industry: {stockData.finnhubIndustry}
-              </span>
+              <span>Industry: </span>
+              {stockData.finnhubIndustry}
             </div>
             <div>
-              <span className="fw-bold">IPO: {stockData.ipo}</span>
+              <span>IPO: </span>
+              {stockData.ipo}
             </div>
           </div>
           <div className="col">
             <div>
-              <span className="fw-bold">
-                MarketCap: {stockData.marketCapitalization}
-              </span>
+              <span>MarketCap: </span>
+              {stockData.marketCapitalization}
             </div>
             <div>
-              <span className="fw-bold">
-                Shares Outstanding:{stockData.sharesOutstanding}
-              </span>
-            </div>
-            <div>
-              <span className="fw-bold">url:{stockData.url}</span>
-              <a href={stockData.weburl}>{stockData.weburl}</a>
+              <span>Share Outstanding: </span>
+              {stockData.shareOutstanding}
             </div>
           </div>
         </div>

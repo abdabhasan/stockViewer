@@ -1,0 +1,8 @@
+@import "../../Variables/stylingVars.scss";
+.stock-details-page {
+  background-color: $bg-stockDetails;
+  .logo-container {
+    background-color: $bg-logoDetails;
+    color: $logoDetails-color;
+  }
+}

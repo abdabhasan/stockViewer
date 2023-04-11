@@ -50,58 +50,60 @@ const StockList = () => {
   }, [watchList]);
 
   return (
-    <main className="container">
-      <table className="table hover mt-3">
-        <thead style={{ color: "rgb(79,89,102)" }}>
-          <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Last</th>
-            <th scope="col">Chg</th>
-            <th scope="col">Chg%</th>
-            <th scope="col">High</th>
-            <th scope="col">Low</th>
-            <th scope="col">Open</th>
-            <th scope="col">Pclose</th>
-          </tr>
-        </thead>
-        <tbody>
-          {stock.map((stockData) => {
-            return (
-              <tr
-                key={stockData.symbol}
-                className="table-row "
-                onClick={() => {
-                  handleStockSelect(stockData.symbol);
-                }}
-                style={{ cursor: "pointer" }}
-              >
-                <th scope="row">{stockData.symbol}</th>
-                <td>{stockData.data.c}</td>
-                <td className={`text-${changeColor(stockData.data.d)}`}>
-                  {stockData.data.d}
-                  {renderIcon(stockData.data.d)}
-                </td>
-                <td className={`text-${changeColor(stockData.data.dp)}`}>
-                  {stockData.data.dp} {renderIcon(stockData.data.dp)}
-                </td>
-                <td>{stockData.data.h} </td>
-                <td>{stockData.data.l} </td>
-                <td>{stockData.data.o} </td>
-                <td>{stockData.data.pc} </td>
-                <button
-                  className="btn   ml-4 btn-sm d-inline-block delete-button "
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    deleteStock(stockData.symbol);
+    <main className="container  form-container rounded my-3">
+      <div className="table-responsive">
+        <table className="table hover m-2">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Last</th>
+              <th scope="col">Chg</th>
+              <th scope="col">Chg%</th>
+              <th scope="col">High</th>
+              <th scope="col">Low</th>
+              <th scope="col">Open</th>
+              <th scope="col">Close</th>
+            </tr>
+          </thead>
+          <tbody>
+            {stock.map((stockData) => {
+              return (
+                <tr
+                  key={stockData.symbol}
+                  className="table-row "
+                  onClick={() => {
+                    handleStockSelect(stockData.symbol);
                   }}
+                  style={{ cursor: "pointer" }}
                 >
-                  X
-                </button>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+                  <th scope="row">{stockData.symbol}</th>
+                  <td>{stockData.data.c}</td>
+                  <td className={`text-${changeColor(stockData.data.d)}`}>
+                    {stockData.data.d}
+                    {renderIcon(stockData.data.d)}
+                  </td>
+                  <td className={`text-${changeColor(stockData.data.dp)}`}>
+                    {stockData.data.dp} {renderIcon(stockData.data.dp)}
+                  </td>
+                  <td>{stockData.data.h} </td>
+                  <td>{stockData.data.l} </td>
+                  <td>{stockData.data.o} </td>
+                  <td>{stockData.data.pc} </td>
+                  <button
+                    className="btn btn-sm d-inline-block delete-button "
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      deleteStock(stockData.symbol);
+                    }}
+                  >
+                    X
+                  </button>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
     </main>
   );
 };

@@ -1,1 +1,9 @@
- 
+@import "../../Variables/stylingVars.scss";
+.form-container {
+  background-color: $bg-form;
+  width: 90%;
+  color: $dark-color;
+  thead {
+    color: $tableHeaders-color;
+  }
+}
