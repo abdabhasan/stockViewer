@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/stockViewer/static/css/main.483cafc8.css",
+    "main.js": "/stockViewer/static/js/main.e029f5dd.js",
+    "index.html": "/stockViewer/index.html",
+    "main.483cafc8.css.map": "/stockViewer/static/css/main.483cafc8.css.map",
+    "main.e029f5dd.js.map": "/stockViewer/static/js/main.e029f5dd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.483cafc8.css",
+    "static/js/main.e029f5dd.js"
+  ]
+}
